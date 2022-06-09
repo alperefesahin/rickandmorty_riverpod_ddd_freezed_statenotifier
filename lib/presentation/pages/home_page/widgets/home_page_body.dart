@@ -10,9 +10,9 @@ class HomePageBody extends StatelessWidget {
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
       child: Column(
-        children: const [
+        children: [
           SearchBar(),
-          RickAndMortyItems(),
+          const RickAndMortyItems(),
         ],
       ),
     );

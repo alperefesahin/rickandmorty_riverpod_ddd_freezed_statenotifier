@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rickandmorty/domain/character/character.dart';
 import 'package:rickandmorty/presentation/common_widgets/colors.dart';
 
-import 'package:rickandmorty/providers/characters_datas_provider.dart';
+import 'package:rickandmorty/providers/search_provider.dart';
 import 'package:sizer/sizer.dart';
 
 class RickAndMortyItems extends ConsumerWidget {
@@ -12,11 +12,7 @@ class RickAndMortyItems extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final List<CharacterModel> characterList = ref.watch(
-      charactersDatasProvider.select(
-        (asyncListOfCharacters) => asyncListOfCharacters.value ?? [],
-      ),
-    );
+    final List<CharacterModel> characterList = ref.watch(searchProvider).characterList;
 
     return characterList.isEmpty
         ? const Center(

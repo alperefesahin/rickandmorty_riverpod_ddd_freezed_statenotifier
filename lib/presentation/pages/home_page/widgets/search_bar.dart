@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rickandmorty/application/search/search_event.dart';
 import 'package:rickandmorty/presentation/common_widgets/colors.dart';
 import 'package:rickandmorty/presentation/pages/home_page/constants.dart/texts.dart';
+import 'package:rickandmorty/providers/search_provider.dart';
 import 'package:sizer/sizer.dart';
 
 class SearchBar extends StatelessWidget {
-  const SearchBar({Key? key}) : super(key: key);
+  SearchBar({Key? key}) : super(key: key);
+  final textfieldController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,22 +29,38 @@ class SearchBar extends StatelessWidget {
             margin: const EdgeInsets.only(left: 25),
             width: 70.w,
             height: 20.h,
-            child: const Center(
+            child: Center(
               child: TextField(
+                controller: textfieldController,
                 cursorColor: whiteColor,
-                style: TextStyle(color: whiteColor),
-                decoration: InputDecoration.collapsed(
+                style: const TextStyle(color: whiteColor),
+                decoration: const InputDecoration.collapsed(
                   hintText: searchCharactersText,
                   hintStyle: TextStyle(color: whiteColor),
                 ),
               ),
             ),
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.search,
-            ),
+          Consumer(
+            builder: (context, ref, child) {
+              return IconButton(
+                onPressed: () {
+                  if (textfieldController.text.isEmpty) {
+                    ref.refresh(searchProvider);
+                  } else {
+                    ref.refresh(searchProvider);
+                    ref.read(searchProvider.notifier).mapEventsToState(
+                          SearchedTextChanged(
+                            text: textfieldController.text,
+                          ),
+                        );
+                  }
+                },
+                icon: const Icon(
+                  Icons.search,
+                ),
+              );
+            },
           ),
         ],
       ),

@@ -16,42 +16,44 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$SearchEvent {
-  String get text => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String text) searchedTextChanged,
+    required TResult Function(List<CharacterModel> characterModelList)
+        updateListItems,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String text)? searchedTextChanged,
+    TResult Function(List<CharacterModel> characterModelList)? updateListItems,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String text)? searchedTextChanged,
+    TResult Function(List<CharacterModel> characterModelList)? updateListItems,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(SearchedTextChanged value) searchedTextChanged,
+    required TResult Function(UpdateListItems value) updateListItems,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(SearchedTextChanged value)? searchedTextChanged,
+    TResult Function(UpdateListItems value)? updateListItems,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SearchedTextChanged value)? searchedTextChanged,
+    TResult Function(UpdateListItems value)? updateListItems,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $SearchEventCopyWith<SearchEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -60,7 +62,6 @@ abstract class $SearchEventCopyWith<$Res> {
   factory $SearchEventCopyWith(
           SearchEvent value, $Res Function(SearchEvent) then) =
       _$SearchEventCopyWithImpl<$Res>;
-  $Res call({String text});
 }
 
 /// @nodoc
@@ -70,27 +71,13 @@ class _$SearchEventCopyWithImpl<$Res> implements $SearchEventCopyWith<$Res> {
   final SearchEvent _value;
   // ignore: unused_field
   final $Res Function(SearchEvent) _then;
-
-  @override
-  $Res call({
-    Object? text = freezed,
-  }) {
-    return _then(_value.copyWith(
-      text: text == freezed
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class _$$SearchedTextChangedCopyWith<$Res>
-    implements $SearchEventCopyWith<$Res> {
+abstract class _$$SearchedTextChangedCopyWith<$Res> {
   factory _$$SearchedTextChangedCopyWith(_$SearchedTextChanged value,
           $Res Function(_$SearchedTextChanged) then) =
       __$$SearchedTextChangedCopyWithImpl<$Res>;
-  @override
   $Res call({String text});
 }
 
@@ -153,6 +140,8 @@ class _$SearchedTextChanged implements SearchedTextChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String text) searchedTextChanged,
+    required TResult Function(List<CharacterModel> characterModelList)
+        updateListItems,
   }) {
     return searchedTextChanged(text);
   }
@@ -161,6 +150,7 @@ class _$SearchedTextChanged implements SearchedTextChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String text)? searchedTextChanged,
+    TResult Function(List<CharacterModel> characterModelList)? updateListItems,
   }) {
     return searchedTextChanged?.call(text);
   }
@@ -169,6 +159,7 @@ class _$SearchedTextChanged implements SearchedTextChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String text)? searchedTextChanged,
+    TResult Function(List<CharacterModel> characterModelList)? updateListItems,
     required TResult orElse(),
   }) {
     if (searchedTextChanged != null) {
@@ -181,6 +172,7 @@ class _$SearchedTextChanged implements SearchedTextChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(SearchedTextChanged value) searchedTextChanged,
+    required TResult Function(UpdateListItems value) updateListItems,
   }) {
     return searchedTextChanged(this);
   }
@@ -189,6 +181,7 @@ class _$SearchedTextChanged implements SearchedTextChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(SearchedTextChanged value)? searchedTextChanged,
+    TResult Function(UpdateListItems value)? updateListItems,
   }) {
     return searchedTextChanged?.call(this);
   }
@@ -197,6 +190,7 @@ class _$SearchedTextChanged implements SearchedTextChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SearchedTextChanged value)? searchedTextChanged,
+    TResult Function(UpdateListItems value)? updateListItems,
     required TResult orElse(),
   }) {
     if (searchedTextChanged != null) {
@@ -210,10 +204,153 @@ abstract class SearchedTextChanged implements SearchEvent {
   const factory SearchedTextChanged({required final String text}) =
       _$SearchedTextChanged;
 
-  @override
   String get text => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$SearchedTextChangedCopyWith<_$SearchedTextChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateListItemsCopyWith<$Res> {
+  factory _$$UpdateListItemsCopyWith(
+          _$UpdateListItems value, $Res Function(_$UpdateListItems) then) =
+      __$$UpdateListItemsCopyWithImpl<$Res>;
+  $Res call({List<CharacterModel> characterModelList});
+}
+
+/// @nodoc
+class __$$UpdateListItemsCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res>
+    implements _$$UpdateListItemsCopyWith<$Res> {
+  __$$UpdateListItemsCopyWithImpl(
+      _$UpdateListItems _value, $Res Function(_$UpdateListItems) _then)
+      : super(_value, (v) => _then(v as _$UpdateListItems));
+
+  @override
+  _$UpdateListItems get _value => super._value as _$UpdateListItems;
+
+  @override
+  $Res call({
+    Object? characterModelList = freezed,
+  }) {
+    return _then(_$UpdateListItems(
+      characterModelList: characterModelList == freezed
+          ? _value._characterModelList
+          : characterModelList // ignore: cast_nullable_to_non_nullable
+              as List<CharacterModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateListItems implements UpdateListItems {
+  const _$UpdateListItems(
+      {required final List<CharacterModel> characterModelList})
+      : _characterModelList = characterModelList;
+
+  final List<CharacterModel> _characterModelList;
+  @override
+  List<CharacterModel> get characterModelList {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_characterModelList);
+  }
+
+  @override
+  String toString() {
+    return 'SearchEvent.updateListItems(characterModelList: $characterModelList)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateListItems &&
+            const DeepCollectionEquality()
+                .equals(other._characterModelList, _characterModelList));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_characterModelList));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$UpdateListItemsCopyWith<_$UpdateListItems> get copyWith =>
+      __$$UpdateListItemsCopyWithImpl<_$UpdateListItems>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String text) searchedTextChanged,
+    required TResult Function(List<CharacterModel> characterModelList)
+        updateListItems,
+  }) {
+    return updateListItems(characterModelList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String text)? searchedTextChanged,
+    TResult Function(List<CharacterModel> characterModelList)? updateListItems,
+  }) {
+    return updateListItems?.call(characterModelList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String text)? searchedTextChanged,
+    TResult Function(List<CharacterModel> characterModelList)? updateListItems,
+    required TResult orElse(),
+  }) {
+    if (updateListItems != null) {
+      return updateListItems(characterModelList);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SearchedTextChanged value) searchedTextChanged,
+    required TResult Function(UpdateListItems value) updateListItems,
+  }) {
+    return updateListItems(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SearchedTextChanged value)? searchedTextChanged,
+    TResult Function(UpdateListItems value)? updateListItems,
+  }) {
+    return updateListItems?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SearchedTextChanged value)? searchedTextChanged,
+    TResult Function(UpdateListItems value)? updateListItems,
+    required TResult orElse(),
+  }) {
+    if (updateListItems != null) {
+      return updateListItems(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateListItems implements SearchEvent {
+  const factory UpdateListItems(
+          {required final List<CharacterModel> characterModelList}) =
+      _$UpdateListItems;
+
+  List<CharacterModel> get characterModelList =>
+      throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$UpdateListItemsCopyWith<_$UpdateListItems> get copyWith =>
       throw _privateConstructorUsedError;
 }

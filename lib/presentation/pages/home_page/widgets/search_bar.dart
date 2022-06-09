@@ -58,6 +58,7 @@ class SearchBar extends StatelessWidget {
                 },
                 icon: const Icon(
                   Icons.search,
+                  color: whiteColor,
                 ),
               );
             },

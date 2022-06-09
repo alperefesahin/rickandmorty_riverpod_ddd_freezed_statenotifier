@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:rickandmorty/domain/character/character.dart';
 
 class ApiService {
   Future<List> getCharactersDatas() async {

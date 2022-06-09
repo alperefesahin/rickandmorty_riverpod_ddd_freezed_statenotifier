@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rickandmorty/domain/character/character.dart';
 import 'package:rickandmorty/presentation/common_widgets/colors.dart';
+import 'package:rickandmorty/presentation/pages/home_page/constants.dart/texts.dart';
 
 import 'package:rickandmorty/providers/search_provider.dart';
 import 'package:sizer/sizer.dart';
@@ -16,8 +17,13 @@ class RickAndMortyItems extends ConsumerWidget {
 
     return characterList.isEmpty
         ? const Center(
-            child: CircularProgressIndicator(
-              color: blackColor,
+            child: Padding(
+              padding: EdgeInsets.only(top: 150, left: 8, right: 8),
+              child: Text(
+                noCharacter,
+                style: TextStyle(fontSize: 25),
+                textAlign: TextAlign.center,
+              ),
             ),
           )
         : SizedBox(

@@ -14,7 +14,6 @@ class SearchNotifier extends StateNotifier<SearchState> {
                 .toLowerCase()
                 .contains(searchedTextChangedEvent.text.toLowerCase().trimLeft()))
             .toList();
-  print(searchedCharacterList);
   
         state = state.copyWith(characterList: searchedCharacterList);
       },
